@@ -15,21 +15,36 @@
     width: 17rem;
 }
 
-input[type="checkbox"]{
+img{
+    width: 28px;
+    height: 28px;
+}
+
+li{
+    display: inline;
+}
+
+.offImg{
+    display: inline-block;
+    z-index: 1;
+}
+.checkbox:checked + .offImg{
     display: none;
-}
-label img{
-    width: 32px;
-    height: 32px;
+    z-index: -1;
 }
 
-label::before{
-    background-image: url(/icons/jgOff.png);
+
+.onImg{
+    z-index: -1;
 }
 
-:checked + label{
-    background-image: url(/icons/jgOn.png);
+.checkbox:checked + .onImg{
+    display: inline-block !important;
+    z-index: 1;
 }
+
+
+
 
 .outputMenu{
     display: grid;

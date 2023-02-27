@@ -18,26 +18,31 @@
                     <legend>Player 1</legend>
                     <label for="nick"></label>
                     <input type="text" id="nick1" class="nickImput">
-                    <div>
-                        <input type="checkbox" value="top" class="player1roles" checked>
-                        Top
-                    </div>
-                    <div>
-                        <input type="checkbox" value="jg" id="jgBox" class="player1roles">
-                        <label for="jgBox"><img src="/icons/jgOff.png"></label>
-                    </div>
-                    <div>
-                        <input type="checkbox" value="mid" class="player1roles" checked>
-                        Mid
-                    </div>
-                    <div>
-                        <input type="checkbox" value="bot" class="player1roles" checked>
-                        Bot
-                    </div>
-                    <div>
-                        <input type="checkbox" value="sup" class="player1roles" checked>
-                        Sup
-                    </div>
+                    <ul>
+                        <li>
+                           <label for="topCheckbox">
+                            <input type="checkbox" value="top" class="player1roles checkbox" id="topCheckbox">
+                            <img src="icons/topOff.png" class="offImg">
+                            <img src="icons/topOn.png" class="onImg"> 
+                           </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" value="jg" id="jgBox" class="player1roles">
+                            <label for="jgBox"><img src="icons/jgOff.png"></label>
+                        </li>
+                        <li>
+                            <input type="checkbox" value="mid" id="midBox" class="player1roles">
+                            <label for="midBox"><img src="icons/midOff.png"></label>
+                        </li>
+                        <li>
+                            <input type="checkbox" value="bot" id="botBox" class="player1roles">
+                            <label for="botBox"><img src="icons/botOff.png"></label>
+                        </li>
+                        <li>
+                            <input type="checkbox" value="sup" id="supBox" class="player1roles">
+                            <label for="supBox"><img src="icons/supOff.png"></label>
+                        </li>
+                    </ul>
                 </fieldset>
             </div>
             <div class="playerMenu">

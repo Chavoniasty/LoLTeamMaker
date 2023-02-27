@@ -10,16 +10,8 @@ class Player {
 let players = [];
 let team1 = [];
 let team2 = [];
-let counter = 0;
 
 function rollTeams(){
-    // if script fails after 3 times its possible that not enough roles were picked by players
-    if(counter>3){
-        alert("Pick more roles!")
-        throw new Error ("Pick more roles dude! ")
-    }
-    counter++;
-    // empty the arrays
     players = []; team1 = []; team2 = []; 
     for (let i = 1; i < 11; i++) {
         let name = document.getElementById('nick' + i).value;
@@ -69,7 +61,8 @@ function rollTeams(){
     let x = 0;
     while(roleArrays.length != 0){
         if(roleArrays[0].length < 2){
-            rollTeams()
+            alert('More players need to have role: ${roleArrays[0][roleArrays.length-1}');
+            return;
         }
         else {
             let player1index = Math.floor(Math.random() * (roleArrays[0].length - 1));
