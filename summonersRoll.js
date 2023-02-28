@@ -36,7 +36,7 @@ function rollTeams(){
                     topPlayers.push(player);
                     break;
                 
-                case "jg":
+                case "jug":
                     jgPlayers.push(player);
                     break;
                 
@@ -54,14 +54,14 @@ function rollTeams(){
             };
         });
     });
-    topPlayers.push("top"); jgPlayers.push("jg"); midPlayers.push("mid"); botPlayers.push("bot"); supPlayers.push("sup");
+    topPlayers.push("top"); jgPlayers.push("jug"); midPlayers.push("mid"); botPlayers.push("bot"); supPlayers.push("sup");
     roleArrays = [topPlayers, jgPlayers, midPlayers, botPlayers, supPlayers];
     roleArrays.sort((a, b) => (a.length - b.length));
     console.log(roleArrays);
     let x = 0;
     while(roleArrays.length != 0){
         if(roleArrays[0].length < 2){
-            alert('More players need to have role: ${roleArrays[0][roleArrays.length-1}');
+            alert(`More players need to have role: ${roleArrays[0][roleArrays.length-1]}`);
             return;
         }
         else {

@@ -7,13 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>League Team Generator</title>
     <script src="summonersRoll.js"></script>
+    <script src="iconChanger.js"></script>
+    <script src="makePlayerfield.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body onload="createPlayersFieldsets()">
     <div class="container">
-        <div class="inputMenu">
-            <div class="playerMenu">
+        <div id="inputMenu">
+            <!-- <div class="playerMenu">
                 <fieldset class="playerWindow">
                     <legend>Player 1</legend>
                     <label for="nick"></label>
@@ -21,26 +23,33 @@
                     <ul>
                         <li>
                            <label for="topCheckbox">
-                            <input type="checkbox" value="top" class="player1roles checkbox" id="topCheckbox">
-                            <img src="icons/topOff.png" class="offImg">
-                            <img src="icons/topOn.png" class="onImg"> 
+                                <input type="checkbox" value="top" class="player1roles checkbox" id="topCheckbox" onclick="imgChanger('top')">
+                                <img src="icons/topOff.png">
                            </label>
                         </li>
                         <li>
-                            <input type="checkbox" value="jg" id="jgBox" class="player1roles">
-                            <label for="jgBox"><img src="icons/jgOff.png"></label>
+                            <label for="jgCheckbox">
+                                <input type="checkbox" value="jg" class="player1roles checkbox" id="jgCheckbox" onclick="imgChanger('jg')">
+                                <img src="icons/jgOff.png">
+                            </label>
                         </li>
                         <li>
-                            <input type="checkbox" value="mid" id="midBox" class="player1roles">
-                            <label for="midBox"><img src="icons/midOff.png"></label>
+                            <label for="midCheckbox">
+                                <input type="checkbox" value="mid" class="player1roles checkbox" id="midCheckbox" onclick="imgChanger('mid')">
+                                <img src="icons/midOff.png">
+                            </label>
                         </li>
                         <li>
-                            <input type="checkbox" value="bot" id="botBox" class="player1roles">
-                            <label for="botBox"><img src="icons/botOff.png"></label>
+                            <label for="botCheckbox">
+                                <input type="checkbox" value="bot" class="player1roles checkbox" id="botCheckbox" onclick="imgChanger('bot')">
+                                <img src="icons/botOff.png">
+                            </label>
                         </li>
                         <li>
-                            <input type="checkbox" value="sup" id="supBox" class="player1roles">
-                            <label for="supBox"><img src="icons/supOff.png"></label>
+                            <label for="supCheckbox">
+                                <input type="checkbox" value="sup" class="player1roles checkbox" id="supCheckbox" onclick="imgChanger('sup')">
+                                <img src="icons/supOff.png">
+                            </label>
                         </li>
                     </ul>
                 </fieldset>
@@ -287,7 +296,7 @@
                         Sup
                     </div>
                 </fieldset>
-            </div>
+            </div> -->
         </div>
         <div class="outputMenu">
             <div class="outputTeam" id="team1">

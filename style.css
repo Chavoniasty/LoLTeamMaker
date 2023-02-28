@@ -24,25 +24,9 @@ li{
     display: inline;
 }
 
-.offImg{
-    display: inline-block;
-    z-index: 1;
-}
-.checkbox:checked + .offImg{
+/* .checkbox{
     display: none;
-    z-index: -1;
-}
-
-
-.onImg{
-    z-index: -1;
-}
-
-.checkbox:checked + .onImg{
-    display: inline-block !important;
-    z-index: 1;
-}
-
+} */
 
 
 
