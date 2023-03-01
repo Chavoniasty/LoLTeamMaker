@@ -8,7 +8,8 @@ function createPlayersFieldsets(){
     fieldset.classList.add("playerWindow");
 
     const legend = document.createElement("legend");
-    legend.textContent = "Player" + i;
+    legend.setAttribute("align", "center")
+    legend.textContent = "Player " + i;
 
     const label = document.createElement("label");
     label.setAttribute("for", "nick");
@@ -25,14 +26,14 @@ function createPlayersFieldsets(){
     const roles = ["top", "jug", "mid", "bot", "sup"];
     for (let role of roles) {
       const li = document.createElement("li");  
-      const roleLabel = document.createElement("label");
-      roleLabel.setAttribute("for", role + "Checkbox");
       const roleInput = document.createElement("input");
       roleInput.setAttribute("value", role);
       roleInput.setAttribute("id", role + i + "Checkbox");
       roleInput.setAttribute("type", "checkbox");
       roleInput.classList.add("player" + i + "roles", "checkbox");  
       roleInput.setAttribute("onclick", "imgChanger('" + role + i + "')");
+      const roleLabel = document.createElement("label");
+      roleLabel.setAttribute("for", role + i +"Checkbox");
       const roleImg = document.createElement("img");
       roleImg.setAttribute("src", "icons/" + role + "Off.png");
       roleLabel.appendChild(roleInput);
