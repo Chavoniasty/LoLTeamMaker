@@ -1,5 +1,5 @@
 html{
-    background-image: radial-gradient( rgb(58, 70, 84), rgb(22, 27, 35));
+    background-color: rgb(50, 61, 74);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;
@@ -38,7 +38,7 @@ img{
     height: 28px;
 }
 
-li{
+div.playerMenu li{
     display: inline-block;
 }
 
@@ -65,21 +65,26 @@ legend{
     font-weight: bold;
 }
 
-.outputMenu{
+#outputMenu{
     display: grid;
     width: 100%;
+    padding-top: 50px;
+    justify-items: center;
 }
 
-#team1{
+.noBullets{
+    list-style-type: none;
+}
+
+.teamDiv{
+    width: 80%;
+}
+
+#team1Div{
     grid-column: 1 / 2;
 }
 
-#team2{
+#team2Div{
     grid-column: 3/4;
 }
 
-
-#roll{
-    width: 200px;
-    grid-column: 2 / 3;
-}

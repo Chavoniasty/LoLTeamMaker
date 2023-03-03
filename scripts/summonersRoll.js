@@ -61,7 +61,7 @@ function rollTeams(){
     let x = 0;
     while(roleArrays.length != 0){
         if(roleArrays[0].length < 2){
-            alert(`More players need to have role: ${roleArrays[0][roleArrays.length-1]}`);
+            alert(`More players need to have role: ${roleArrays[0][roleArrays[0].length-1]}`);
             return;
         }
         else {
@@ -102,5 +102,16 @@ function rollTeams(){
     console.log(team1);
     console.log("Team 2:")
     console.log(team2);
+    console.log(players);
+
+    players.forEach(player => {
+        console.log(`team${player.team}${player.role}`);
+        let li = document.getElementById(`team${player.team}${player.role}`);
+        li.innerHTML += player.name;
+    })
+
+
+
+
     return;
 };
