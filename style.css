@@ -1,90 +1,132 @@
-html{
+html {
     background-color: rgb(50, 61, 74);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-image: url(icons/background.jpg);
 }
 
 
-.container{
+.container {
     display: grid;
     grid-template-columns: 2;
-    grid-template-rows: 2;
+    grid-template-rows: 3;
     width: 100%;
 }
 
-#inputMenu{
+.topBar {
+    height: 12rem;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 12rem;
+    font-size: 4.5rem;
+}
+
+#inputMenu {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 2;
 }
 
-.playerWindow{
+.playerWindow {
+    padding-top: 15px;
+    padding-bottom: 15px;
     width: 70%;
     background-color: rgb(30, 38, 44);
     margin: auto;
     margin-bottom: 1rem;
     border: solid 2px;
     border-radius: 5%;
-    border-color: rgb(9, 117, 132);
+    border-color: rgb(73, 98, 114);
 }
 
-.playerWindow input[type="text"]{
+.playerWindow input[type="text"] {
     text-align: center;
+    width: 97%;
 }
 
-img{
-    width: 28px;
-    height: 28px;
+ul.pickRole {
+    padding-left: 12%;
+    padding-right: 12%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0;
 }
 
-div.playerMenu li{
+
+img {
+    width: 32px;
+    height: 32px;
+}
+
+div.playerMenu li {
     display: inline-block;
+    padding-bottom: 0.2rem;
 }
 
-input[type="checkbox"]{
+input[type="checkbox"] {
     display: none;
 }
 
-label{
+label {
     cursor: pointer;
 }
 
-label::before{
+label::before {
     display: block;
 }
 
-legend{
-    border-color: rgb(9, 117, 132); ;
-    color:rgb(178, 217, 219);
-    background-color: rgb(47, 59, 69);
-    border-left: solid 2px;
-    border-right: solid 2px;
-    border-radius: 100px / 50px;
-    padding: 6px;
-    font-weight: bold;
-}
 
-#outputMenu{
+#outputMenu {
     display: grid;
     width: 100%;
     padding-top: 50px;
     justify-items: center;
 }
 
-.noBullets{
+.noBullets {
     list-style-type: none;
 }
 
-.teamDiv{
+.teamDiv {
     width: 80%;
 }
 
-#team1Div{
+.teamWindow {
+    border: solid 2px;
+    border-radius: 5%;
+    background-color: rgb(30, 38, 44);
+    border-color: rgb(73, 98, 114);
+
+}
+
+#team1Div {
     grid-column: 1 / 2;
 }
 
-#team2Div{
+#team2Div {
     grid-column: 3/4;
 }
 
+ul.finalRoles {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0;
+    flex-direction: column;
+}
+
+
+
+.buttonDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    height: 3rem;
+    width: 9rem;
+    justify-content: center;
+}

@@ -1,7 +1,7 @@
 const roles = ["top", "jug", "mid", "bot", "sup"];
 
-function createPlayerInput(){
-  for(let i = 1; i < 11; i++){
+function createPlayerInput() {
+  for (let i = 1; i < 11; i++) {
     const inputMenu = document.getElementById("inputMenu");
     const div = document.createElement("div");
     div.classList.add("playerMenu");
@@ -9,9 +9,7 @@ function createPlayerInput(){
     const fieldset = document.createElement("fieldset");
     fieldset.classList.add("playerWindow");
 
-    const legend = document.createElement("legend");
-    legend.setAttribute("align", "center")
-    legend.textContent = "Player " + i;
+
 
     const label = document.createElement("label");
     label.setAttribute("for", "nick");
@@ -20,22 +18,23 @@ function createPlayerInput(){
     input.setAttribute("id", "nick" + i);
     input.classList.add("nickImput");
     label.appendChild(input);
-      
-        // Create ul element
+
+    // Create ul element
     const ul = document.createElement("ul");
-      
-        // Create li elements for each role
-   
+    ul.setAttribute("class", "pickRole")
+
+    // Create li elements for each role
+
     for (let role of roles) {
-      const li = document.createElement("li");  
+      const li = document.createElement("li");
       const roleInput = document.createElement("input");
       roleInput.setAttribute("value", role);
       roleInput.setAttribute("id", role + i + "Checkbox");
       roleInput.setAttribute("type", "checkbox");
-      roleInput.classList.add("player" + i + "roles", "checkbox");  
+      roleInput.classList.add("player" + i + "roles", "checkbox");
       roleInput.setAttribute("onclick", "imgChanger('" + role + i + "')");
       const roleLabel = document.createElement("label");
-      roleLabel.setAttribute("for", role + i +"Checkbox");
+      roleLabel.setAttribute("for", role + i + "Checkbox");
       const roleImg = document.createElement("img");
       roleImg.setAttribute("src", "icons/" + role + "Off.png");
       roleLabel.appendChild(roleInput);
@@ -45,7 +44,7 @@ function createPlayerInput(){
     }
 
     // Append elements to the fieldset
-    fieldset.appendChild(legend);
+
     fieldset.appendChild(label);
     fieldset.appendChild(ul);
 
@@ -54,39 +53,47 @@ function createPlayerInput(){
 
     // Append the div to the body of the HTML doc
     inputMenu.appendChild(div);
+  }
+
+  for (let teamNum = 1; teamNum < 3; teamNum++) {
+    const outputMenu = document.getElementById("outputMenu");
+    const div = document.createElement("div");
+    div.classList.add("teamDiv")
+    div.setAttribute("id", "team" + teamNum + "Div")
+
+    const fieldset = document.createElement("fieldset");
+    fieldset.classList.add("teamWindow");
+
+    const ul = document.createElement("ul")
+    ul.classList.add("finalRoles")
+
+
+    for (let role of roles) {
+      const li = document.createElement("li");
+      const roleImg = document.createElement("img");
+      roleImg.setAttribute("src", "icons/" + role + "On.png");
+      li.appendChild(roleImg);
+      li.setAttribute("id", "team" + teamNum + role);
+      li.classList.add("noBullets")
+      ul.appendChild(li);
     }
 
-    for (let teamNum = 1; teamNum < 3; teamNum++){
-      const outputMenu = document.getElementById("outputMenu");
-      const div = document.createElement("div");
-      div.classList.add("teamDiv")
-      div.setAttribute("id", "team" + teamNum + "Div")
+    fieldset.appendChild(ul)
+    div.appendChild(fieldset)
+    outputMenu.appendChild(div)
 
-      const fieldset = document.createElement("fieldset");
-      fieldset.classList.add("teamWindow");
+    if (teamNum === 1) {
+      const buttonDiv = document.createElement("div");
+      buttonDiv.classList.add("buttonDiv")
+      const button = document.createElement("button");
+      button.setAttribute("onclick", "rollTeams()");
+      button.classList.add("button");
+      button.textContent = "Generate Teams"
 
-      const legend = document.createElement("legend");
-      legend.setAttribute("align", "center");
-      legend.textContent = "Team" + teamNum;
+      buttonDiv.appendChild(button);
+      outputMenu.append(buttonDiv);
+    }
 
-      const ul = document.createElement("ul")
+  }
 
-
-      for (let role of roles){
-        const li = document.createElement("li");
-        const roleImg = document.createElement("img");
-        roleImg.setAttribute("src", "icons/" + role + "On.png");
-        li.appendChild(roleImg);
-        li.setAttribute("id", "team" + teamNum + role);
-        li.classList.add("noBullets")
-        ul.appendChild(li);
-      }
-     
-      fieldset.appendChild(ul)
-      fieldset.appendChild(legend)
-      div.appendChild(fieldset)  
-      outputMenu.appendChild(div)
-    
-   }
-    
 }
